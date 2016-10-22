@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_overview"
+            android:icon="@drawable/ic_menu_overview"
+            android:title="@string/nav_overview_str" />
+        <item
+            android:id="@+id/nav_daily"
+            android:icon="@drawable/ic_menu_daily"
+            android:title="@string/nav_daily_str" />
+        <item
+            android:id="@+id/nav_utility"
+            android:icon="@drawable/ic_menu_utility"
+            android:title="@string/nav_utility_str" />
+        <item
+            android:id="@+id/nav_loan"
+            android:icon="@drawable/ic_menu_loan"
+            android:title="@string/nav_loan_str" />
+        <item
+            android:id="@+id/nav_insurance"
+            android:icon="@drawable/ic_menu_insurance"
+            android:title="@string/nav_insurance_str" />
+        <item
+            android:id="@+id/nav_income"
+            android:icon="@drawable/ic_menu_income"
+            android:title="@string/nav_income_str" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send" />
+        </menu>
+    </item>
+
+
+</menu>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="categoryarray">
+        <item>@string/nav_daily_str</item>
+        <item>@string/nav_utility_str</item>
+        <item>@string/nav_loan_str</item>
+        <item>@string/nav_insurance_str</item>
+        <item>@string/nav_income_str</item>
+    </string-array>
+
+</resources>

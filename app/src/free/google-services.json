@@ -1,0 +1,38 @@
+{
+  "project_info": {
+    "project_number": "474568256282",
+    "project_id": "money-saver-f06e7"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:474568256282:android:851e26d3e6ec90eb",
+        "android_client_info": {
+          "package_name": "com.blues.money_saver.free"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvDIcjHVerg55rYZLzoqarIgI7SbaOG0A"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-86170153-1"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

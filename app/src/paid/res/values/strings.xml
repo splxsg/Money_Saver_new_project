@@ -1,0 +1,29 @@
+<resources xmlns:xliff="http://schemas.android.com/tools">
+    <string name="app_name">Money Saver</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="category_spin_title">Choose a category</string>
+
+    <string name="Empty_data">No information availabile</string>
+
+
+
+    <string name="nav_overview_str">Overview</string>
+    <string name="nav_daily_str">daily</string>
+    <string name="nav_utility_str">utility</string>
+    <string name="nav_loan_str">Loan</string>
+    <string name="nav_insurance_str">insurance</string>
+    <string name="nav_income_str">Income</string>
+
+    <string name="a11y_DateTextview">Date<xliff:g id="name">%1$s</xliff:g></string>
+    <string name="a11y_AmountTextview">Amount<xliff:g id="name">%1$s</xliff:g></string>
+    <string name="a11y_CategoryTextview">Category<xliff:g id="name">%1$s</xliff:g></string>
+    <string name="a11y_DetailsTextview">Details<xliff:g id="name">%1$s</xliff:g></string>
+    <string name="a11y_fab">New<xliff:g id="name">%1$s</xliff:g></string>
+
+
+
+</resources>
