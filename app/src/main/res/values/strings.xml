@@ -12,10 +12,10 @@
 
 
     <string name="nav_overview_str">Overview</string>
-    <string name="nav_daily_str">daily</string>
-    <string name="nav_utility_str">utility</string>
+    <string name="nav_daily_str">Daily</string>
+    <string name="nav_utility_str">Utility</string>
     <string name="nav_loan_str">Loan</string>
-    <string name="nav_insurance_str">insurance</string>
+    <string name="nav_insurance_str">Insurance</string>
     <string name="nav_income_str">Income</string>
 
 

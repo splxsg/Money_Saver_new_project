@@ -8,5 +8,8 @@
     <color name="white">#FFF</color>
     <color name="red">#FF0000</color>
     <color name="tab_bar">#004D40</color>
+    <color name="pie_daily">#AA66CC</color>
+    <color name="pie_insurance">#FFBB33</color>
+    <color name="pie_utility">#33B5E5</color>
 
 </resources>

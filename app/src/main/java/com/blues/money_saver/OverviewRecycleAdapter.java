@@ -1,9 +1,14 @@
 package com.blues.money_saver;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.provider.Contacts;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -100,11 +105,11 @@ public class OverviewRecycleAdapter extends RecyclerView.Adapter<OverviewRecycle
                holder.chart.setVisibility(View.VISIBLE);
                List<SliceValue> values = new ArrayList<SliceValue>();
                //for (int i = 0; i < numValues; ++i) {
-               SliceValue sliceValue = new SliceValue(daily, ChartUtils.pickColor());
+               SliceValue sliceValue = new SliceValue(daily, mContext.getColor(R.color.pie_daily));
                values.add(sliceValue);
-               sliceValue = new SliceValue(utility, ChartUtils.pickColor());
+               sliceValue = new SliceValue(utility, mContext.getColor(R.color.pie_utility));
                values.add(sliceValue);
-               sliceValue = new SliceValue(insurance, ChartUtils.pickColor());
+               sliceValue = new SliceValue(insurance, mContext.getColor(R.color.pie_insurance));
                values.add(sliceValue);
                // }
 
@@ -128,6 +133,21 @@ public class OverviewRecycleAdapter extends RecyclerView.Adapter<OverviewRecycle
 
         @Override
         public void onValueSelected(int arcIndex, SliceValue value) {
+            String menuid = "";
+            switch (arcIndex)
+            {
+                case 0: menuid = mContext.getString(R.string.nav_daily_str);
+                    break;
+                case 1: menuid = mContext.getString(R.string.nav_utility_str);
+                    break;
+                case 2: menuid = mContext.getString(R.string.nav_insurance_str);
+                    break;
+            }
+            TabFragment tabfragment = new TabFragment();
+            Utility.setCategory(menuid);
+            ((FragmentActivity)mContext).getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.content_main_fragment, tabfragment)
+                    .commit();
             Toast.makeText(mContext, Utility.payoutName[arcIndex] +" "+ value.getValue(), Toast.LENGTH_SHORT).show();
         }
 

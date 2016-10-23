@@ -61,6 +61,7 @@ public class CreateNewMoneyFragment extends Fragment {
         mYear = c.get(Calendar.YEAR);
         mMonth = c.get(Calendar.MONTH);
         mDay = c.get(Calendar.DAY_OF_MONTH);
+        editDate.setText(mDay+"-"+Utility.monthConvert(mMonth)+"-"+mYear);
         datePickerDialog = new DatePickerDialog(getActivity(),
                 new DatePickerDialog.OnDateSetListener(){
                     @Override
@@ -68,9 +69,9 @@ public class CreateNewMoneyFragment extends Fragment {
                                           int month, int date)
                     {
                         editDate.setText(date+"-"+Utility.monthConvert(month)+"-"+year);
-                        newDay = date;
-                        newMonth = month;
-                        newYear = year;
+                        mDay = date;
+                        mMonth = month;
+                        mYear = year;
                         editDetails.requestFocus();
                     }
                 }, mYear, mMonth, mDay);
@@ -116,7 +117,7 @@ public class CreateNewMoneyFragment extends Fragment {
             public void onClick(View v)
             {
                 insertNewTransaction(editAmount.getText().toString(),
-                        newYear+"",Utility.monthConvert(newMonth),newDay+"",
+                        mYear+"",Utility.monthConvert(mMonth),mDay+"",
                         categoryStr,
                         editDetails.getText().toString());
             }

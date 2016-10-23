@@ -2,6 +2,8 @@ package com.blues.money_saver;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,9 +40,10 @@ public class MoneyRecycleAdapter extends RecyclerView.Adapter<MoneyRecycleAdapte
         @Override
         public void onBindViewHolder(MoneyRecycleViewHolder holder, int position) {
             mCursor.moveToPosition(position);
-           String datelongformat = mCursor.getString(mCursor.getColumnIndex(MoneyContract.MoneyEntry.COLUMN_MONEY_DATE_Year))+"-"+
+           /*String datelongformat = mCursor.getString(mCursor.getColumnIndex(MoneyContract.MoneyEntry.COLUMN_MONEY_DATE_Year))+"-"+
                    mCursor.getString(mCursor.getColumnIndex(MoneyContract.MoneyEntry.COLUMN_MONEY_DATE_Month))+"-"+
-                   mCursor.getString(mCursor.getColumnIndex(MoneyContract.MoneyEntry.COLUMN_MONEY_DATE_Date));
+                   mCursor.getString(mCursor.getColumnIndex(MoneyContract.MoneyEntry.COLUMN_MONEY_DATE_Date));*/
+            String datelongformat = Utility.getTabindex()+1+"/"+mCursor.getString(mCursor.getColumnIndex(MoneyContract.MoneyEntry.COLUMN_MONEY_DATE_Date));
             holder.mDateTextview.setText(datelongformat);
             holder.mAmountTextview.setText(mCursor.getString(mCursor.getColumnIndex(MoneyContract.MoneyEntry.COLUMN_MONEY_AMOUNT)));
             holder.mCategoryTextview.setText(mCursor.getString(mCursor.getColumnIndex(MoneyContract.MoneyEntry.COLUMN_MONEY_CATEGORY)));
@@ -54,6 +57,8 @@ public class MoneyRecycleAdapter extends RecyclerView.Adapter<MoneyRecycleAdapte
             holder.mDetailsTextview.setContentDescription(mContext.getString(R.string.a11y_DetailsTextview,
                     mCursor.getString(mCursor.getColumnIndex(MoneyContract.MoneyEntry.COLUMN_MONEY_DETAILS))));
         }
+
+
 
 
         @Override

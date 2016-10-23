@@ -1,11 +1,8 @@
 package com.blues.money_saver;
 
 
-import android.app.IntentService;
-import android.content.ContentResolver;
 import android.content.ContentUris;
 import android.content.ContentValues;
-import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
@@ -21,9 +18,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
 
 import com.blues.money_saver.data.MoneyContract;
 
@@ -69,15 +63,10 @@ public class OverviewFragment extends Fragment implements LoaderManager.LoaderCa
         mOverviewAdapter = new OverviewRecycleAdapter(getActivity());
         recyclerView.setAdapter(mOverviewAdapter);
 
-        AdView mAdView = (AdView) rootView.findViewById(R.id.adView);
         if(getResources().getString(R.string.flavors) == getResources().getString(R.string.freeflavors))
         {
-
-
-            AdRequest adRequest = new AdRequest.Builder()
-                    .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-                    .build();
-            mAdView.loadAd(adRequest);
+            AdviewActivity adviewActivity = new AdviewActivity(rootView,getActivity());
+            adviewActivity.showad();
         }
 
 

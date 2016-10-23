@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.util.Log;
 
 import com.blues.money_saver.data.MoneyContract;
+import com.blues.money_saver.widget.NewMoneyWidget;
 
 import java.util.Vector;
 
@@ -108,6 +109,8 @@ public class OverviewUpdateIntent extends IntentService {
         }
 
 
+        Intent updateIntent = new Intent("android.appwidget.action.APPWIDGET_UPDATE");
+        this.sendBroadcast(updateIntent);
 
     }
 }

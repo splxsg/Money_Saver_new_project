@@ -21,6 +21,8 @@ import static com.blues.money_saver.CategoryFragment.LOG_TAG;
 public class Utility {
     public static String[] Monthontab={"January","February","March","April","May","June"
             ,"July","August","September","October","November","December"};
+    public static String[] Monthshort={"Jan","Feb","Mar","Apr","May","Jun"
+            ,"Jul","Aug","Sep","Oct","Nov","Dec"};
 
     public static String[] payoutName={"Daily","utility","insurance"};
     private static String category;
@@ -43,91 +45,5 @@ public class Utility {
     public static int getTabindex(){return tabind;}
 
 
-    public static void updateSummary(Context context,String month)
-    {
-        Cursor mMoneyCursor;
-        float income,payout,balance,daily,utility,insurance;
-        String select_month, select_summary_month,income_str,loan_str,daily_str,utility_str,insurance_str;
-        Uri summaryUri,moneyUri;
-        int columnCategory, columnAmount;
-        String strcolCategory,strcolAmount;
-
-        summaryUri = MoneyContract.SummaryEntry.CONTENT_URI;
-        moneyUri  = MoneyContract.MoneyEntry.CONTENT_URI;
-
-        select_month = MoneyContract.MoneyEntry.COLUMN_MONEY_DATE_Month;
-        income_str = context.getString(R.string.nav_income_str);
-        loan_str = context.getString(R.string.nav_loan_str);
-        daily_str = context.getString(R.string.nav_daily_str);
-        utility_str = context.getString(R.string.nav_utility_str);
-        insurance_str = context.getString(R.string.nav_insurance_str);
-
-
-        income = 0f;
-        payout = 0f;
-        daily = 0f;
-        utility = 0f;
-        insurance = 0f;
-        mMoneyCursor = context.getContentResolver().query(
-                moneyUri,
-                null,
-                select_month + "=?",
-                new String[] {month},
-                null);
-
-
-        columnCategory = mMoneyCursor.getColumnIndex(MoneyContract.MoneyEntry.COLUMN_MONEY_CATEGORY);
-        columnAmount = mMoneyCursor.getColumnIndex(MoneyContract.MoneyEntry.COLUMN_MONEY_AMOUNT);
-        if(mMoneyCursor.moveToFirst())
-        {
-                while(!mMoneyCursor.isAfterLast())
-                {
-                    strcolCategory = mMoneyCursor.getString(columnCategory);
-                    strcolAmount = mMoneyCursor.getString(columnAmount);
-
-
-                    if(strcolCategory.equals(income_str)||
-                            strcolCategory.equals(loan_str))
-                    {
-                        income += Float.parseFloat(strcolAmount);
-                    }
-                    else
-                    {
-                        if(strcolCategory.equals(daily_str))
-                            daily += Float.parseFloat(strcolAmount);
-                        else if(strcolCategory.equals(utility_str))
-                            utility += Float.parseFloat(strcolAmount);
-                        else if(strcolCategory.equals(insurance_str))
-                            insurance += Float.parseFloat(strcolAmount);
-                        payout += Float.parseFloat(strcolAmount);
-                    }
-                    mMoneyCursor.moveToNext();
-                }
-        }
-
-        balance = income - payout;
-
-        if(mMoneyCursor.moveToFirst())
-        {
-            Vector<ContentValues> cVVector = new Vector<ContentValues>(1);
-            ContentValues moneyValues = new ContentValues();
-            select_summary_month = SummaryEntry.COLUMN_SUMMARY_MONTH;
-
-            moneyValues.put(SummaryEntry.COLUMN_SUMMARY_INCOME,income);
-            moneyValues.put(SummaryEntry.COLUMN_SUMMARY_PAYOUT,payout);
-            moneyValues.put(SummaryEntry.COLUMN_SUMMARY_BALANCE,balance);
-            moneyValues.put(SummaryEntry.COLUMN_SUMMARY_DAILY,daily);
-            moneyValues.put(SummaryEntry.COLUMN_SUMMARY_UTILITY,utility);
-            moneyValues.put(SummaryEntry.COLUMN_SUMMARY_INSURANCE,insurance);
-
-            cVVector.add(moneyValues);
-            if(context.getContentResolver().update(summaryUri,
-                    moneyValues,
-                    select_summary_month + "=?",
-                    new String[] {month}) != -1)
-                Log.d(LOG_TAG, "Overview has been updated");
-        }
-
-    }
 
 }

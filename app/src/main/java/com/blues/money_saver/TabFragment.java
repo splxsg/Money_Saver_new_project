@@ -137,7 +137,7 @@ public class TabFragment extends Fragment  {
 
         @Override
         public CharSequence getPageTitle(int position) {
-            return Utility.Monthontab[position];
+            return Utility.Monthshort[position];
         }
     }
 

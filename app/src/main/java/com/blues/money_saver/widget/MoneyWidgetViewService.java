@@ -77,11 +77,8 @@ public class MoneyWidgetViewService extends RemoteViewsService {
                         R.layout.widget_money_list_item);
                 views.setTextViewText(R.id.widget_item_income, data.getString(data.getColumnIndex(MoneyContract.SummaryEntry.COLUMN_SUMMARY_INCOME)));
                 views.setTextViewText(R.id.widget_item_payout, data.getString(data.getColumnIndex(MoneyContract.SummaryEntry.COLUMN_SUMMARY_PAYOUT)));
-                //views.setTextViewText(R.id.widget_item_payout,"889988");
                 views.setTextViewText(R.id.widget_item_balance, data.getString(data.getColumnIndex(MoneyContract.SummaryEntry.COLUMN_SUMMARY_BALANCE)));
                 views.setTextViewText(R.id.widget_item_date,data.getString(data.getColumnIndex(MoneyContract.SummaryEntry.COLUMN_SUMMARY_MONTH)));
-                //final Intent fillInIntent = new Intent(mContext, DetailStockActivity.class).putExtra("position", symbol);
-                //views.setOnClickFillInIntent(R.id.widget_stock_item, fillInIntent);
                 return views;
             }
 

@@ -20,6 +20,7 @@ import com.blues.money_saver.R;
 
 public class NewMoneyWidget extends AppWidgetProvider  {
 
+
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
 
         // Perform this loop procedure for each App Widget that belongs to this provider
@@ -29,13 +30,12 @@ public class NewMoneyWidget extends AppWidgetProvider  {
 
             // Create an Intent to launch MainActivity
             Intent intent = new Intent(context, MainActivity.class);
-            Intent updateintent = new Intent(context, MoneyWidgetViewService.class);
-            updateintent.putExtra("tag","manually");
+
             PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
-            PendingIntent pendingUpdateIntent = PendingIntent.getActivity(context,0,updateintent,0);
+            //PendingIntent pendingUpdateIntent = PendingIntent.getActivity(context,0,updateintent,0);
             //views.setOnClickPendingIntent(R.id.widget_stock_framelayout, pendingIntent);
             views.setOnClickPendingIntent(R.id.appwidget_text,pendingIntent);
-            views.setOnClickPendingIntent(R.id.widget_update,pendingUpdateIntent);
+            //views.setOnClickPendingIntent(R.id.widget_update,pendingUpdateIntent);
 
             // Set up the collection
 
@@ -54,19 +54,20 @@ public class NewMoneyWidget extends AppWidgetProvider  {
 
             appWidgetManager.updateAppWidget(appWidgetId, views);
         }
-        //context.startService(new Intent(context, MoneyWidgetViewService.class));
+        context.startService(new Intent(context, MoneyWidgetViewService.class));
     }
 
 
     @Override
     public void onReceive(@NonNull Context context, @NonNull Intent intent) {
         super.onReceive(context, intent);
+        if (intent.getAction().equals("android.appwidget.action.APPWIDGET_UPDATE")) {
             AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
             int[] appWidgetIds = appWidgetManager.getAppWidgetIds(
                     new ComponentName(context, getClass()));
             appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds, R.id.widget_card);
+        }
     }
-
     private void setRemoteAdapter(Context context, @NonNull final RemoteViews views) {
         views.setRemoteAdapter(R.id.widget_card,
                 new Intent(context,MoneyWidgetViewService.class));
