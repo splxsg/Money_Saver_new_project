@@ -19,7 +19,8 @@ import static com.blues.money_saver.CategoryFragment.LOG_TAG;
  * Created by Blues on 21/09/2016.
  */
 public class Utility {
-    public static String[] Monthontab={"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"};
+    public static String[] Monthontab={"January","February","March","April","May","June"
+            ,"July","August","September","October","November","December"};
 
     public static String[] payoutName={"Daily","utility","insurance"};
     private static String category;
