@@ -27,9 +27,16 @@
     <string name="a11y_CategoryTextview">Category<xliff:g id="name">%1$s</xliff:g></string>
     <string name="a11y_DetailsTextview">Details<xliff:g id="name">%1$s</xliff:g></string>
     <string name="a11y_fab">New<xliff:g id="name">%1$s</xliff:g></string>
+    <string name="a11y_insert_btn">confirm to insert</string>
 
     <string name="title_widget_detail">Money Saver</string>
     <string name="add_widget">Add widget</string>
 
+    <string name="emptyinmonth">no information in this month</string>
 
+    <string name="toast_done">DONE</string>
+    <string name="toast_error">ERROR</string>
+
+    <string name="fetch_complete">FetchWeatherTask Complete, inserted: </string>
+    <string name="overview_updated">Overview has been updated</string>
 </resources>

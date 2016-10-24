@@ -115,7 +115,6 @@ public class MoneyProvider extends ContentProvider{
     public Uri insert(Uri uri, ContentValues values) {
         final SQLiteDatabase db = mOpenHelper.getWritableDatabase();
         final int match = sUriMatcher.match(uri);
-        Log.v("IIIIII",match+"");
         Uri returnUri;
 
         switch (match) {

@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="left|center"
+        android:gravity="start|center"
         android:padding="10dp">
 
         <TextView
@@ -36,7 +36,7 @@
             android:id="@+id/item_income"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="right"
+            android:gravity="end"
             android:paddingEnd="10dp"
             tools:text="888.88" />
         </LinearLayout>
@@ -54,7 +54,7 @@
             android:id="@+id/item_payout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="right"
+            android:gravity="end"
             android:paddingEnd="10dp"
             android:textColor="@color/red"
             tools:text="888.88" />
@@ -73,7 +73,7 @@
             android:id="@+id/item_balance"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="right"
+            android:gravity="end"
             android:paddingEnd="10dp"
             tools:text="0" />
         </LinearLayout>

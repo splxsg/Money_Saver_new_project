@@ -105,7 +105,7 @@ public class OverviewUpdateIntent extends IntentService {
                     moneyValues,
                     select_summary_month + "=?",
                     new String[]{month}) != -1)
-                Log.d(LOG_TAG, "Overview has been updated");
+                Log.d(LOG_TAG, getString(R.string.overview_updated));
         }
 
 

@@ -103,11 +103,9 @@ public class OverviewFragment extends Fragment implements LoaderManager.LoaderCa
                 int inserted = 0;
                 inserteduri = getContext().getContentResolver().insert(MoneyContract.SummaryEntry.CONTENT_URI, moneyValues);
                 if(ContentUris.parseId(inserteduri) != -1)
-                    Log.d(LOG_TAG, "FetchWeatherTask Complete. " + inserted + " Inserted");
+                    Log.d(LOG_TAG, getString(R.string.fetch_complete) + inserted);
             }
         }
-
-
     }
 
     @Override

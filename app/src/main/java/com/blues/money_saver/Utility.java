@@ -33,7 +33,7 @@ public class Utility {
         if(month >=0 && month <=11)
        return Monthontab[month];
         else
-            return "none";
+            return null;
     }
 
     public static void setCategory(String cat){category=cat;}

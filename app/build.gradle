@@ -6,7 +6,7 @@ android {
         config {
             keyAlias 'splxsg'
             keyPassword '7539278'
-            storeFile file('C:/Users/017/AndroidStudioProjects/bfb_studio.jks')
+            storeFile file('bfb_studio.jks')
             storePassword '7539278'
         }
     }

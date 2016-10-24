@@ -113,6 +113,7 @@ public class CreateNewMoneyFragment extends Fragment {
 
         //ImageView imageView = (ImageView) rootView.findViewById(R.id.detail_image);
         insertbtn = (Button) rootView.findViewById(R.id.btn_new_insert);
+        insertbtn.setContentDescription(getString(R.string.a11y_insert_btn));
         insertbtn.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v)
             {
@@ -146,12 +147,11 @@ return rootView;
             Intent updateintent = new Intent(getActivity(),OverviewUpdateIntent.class);
             updateintent.putExtra("monthFragment",month);
             getActivity().startService(updateintent);
-            Toast.makeText(getContext(),"DONE",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(),getString(R.string.toast_done),Toast.LENGTH_SHORT).show();
             getActivity().finish();
         }
         else {
-            Log.d(LOG_TAG, "error");
-            Toast.makeText(getContext(),"ERROR",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(),getString(R.string.toast_error),Toast.LENGTH_SHORT).show();
         }
     }
 

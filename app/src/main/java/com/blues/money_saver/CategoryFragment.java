@@ -52,7 +52,7 @@ public class CategoryFragment extends Fragment implements LoaderManager.LoaderCa
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         getLoaderManager().initLoader(CURSOR_LOADER_ID, null, this);
-        ((TextView) rootView.findViewById(R.id.recyclerview_money_empty)).setText("no information in this month");
+        ((TextView) rootView.findViewById(R.id.recyclerview_money_empty)).setText(getString(R.string.emptyinmonth));
 
         ((TextView) rootView.findViewById(R.id.categorytext)).setText(categoryindex);
         mMoneyAdapter = new MoneyRecycleAdapter(getActivity(),rootView.findViewById(R.id.recyclerview_money_empty));

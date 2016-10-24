@@ -10,7 +10,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:gravity="left|center"
+            android:gravity="start|center"
             android:padding="10dp">
 
             <TextView
@@ -33,7 +33,7 @@
                     android:id="@+id/widget_item_income"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="right"
+                    android:gravity="end"
                     android:paddingEnd="10dp"
                     android:text="888.88" />
             </LinearLayout>
@@ -52,7 +52,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingEnd="10dp"
-                    android:gravity="right"
+                    android:gravity="end"
                     android:textColor="@color/red"
                     android:text="888.88" />
             </LinearLayout>
@@ -69,7 +69,7 @@
                     android:id="@+id/widget_item_balance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="right"
+                    android:gravity="end"
                     android:paddingEnd="10dp"
                     android:text="0" />
             </LinearLayout>
