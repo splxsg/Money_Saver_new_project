@@ -14,7 +14,8 @@
         android:id="@+id/categorytext"
         android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionBar.Menu"
         android:textSize="30sp"
-        android:fontFamily="sans-serif-medium" />
+        android:fontFamily="sans-serif-medium"
+        android:textAlignment="center" />
 
     <android.support.v7.widget.RecyclerView
         android:layout_below="@id/categorytext"
@@ -23,26 +24,24 @@
         android:layout_height="match_parent"
         />
 
-    <TextView
-        android:id="@+id/recyclerview_money_empty"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_anchorGravity="fill"
-        android:gravity="center_horizontal"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingEnd="@dimen/activity_horizontal_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingStart="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        android:text="NO INFORMATION"
-        android:fontFamily="sans-serif"
-        android:textSize="24sp" />
     <include
         layout="@layout/adview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"/>
+
+    <TextView
+        android:id="@+id/recyclerview_money_empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_anchorGravity="fill"
+        android:gravity="center_horizontal"
+        android:text="@string/Empty_data"
+        android:fontFamily="sans-serif"
+        android:textSize="24sp"
+        android:layout_below="@+id/categorytext"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="32dp" />
 
 </RelativeLayout>
