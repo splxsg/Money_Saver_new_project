@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity
             sendActionName(getString(R.string.nav_utility_str));}
         else if (id == R.id.nav_loan) {transfragment(getString(R.string.nav_loan_str));
         sendActionName(getString(R.string.nav_loan_str));}
-        else if (id == R.id.nav_income) {
+        else if (id == R.id.nav_income) {transfragment(getString(R.string.nav_income_str));
             sendActionName(getString(R.string.nav_income_str));
         }
         else if (id == R.id.nav_share) {

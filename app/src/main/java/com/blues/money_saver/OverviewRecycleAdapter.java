@@ -123,6 +123,8 @@ public class OverviewRecycleAdapter extends RecyclerView.Adapter<OverviewRecycle
                holder.chart.setValueSelectionEnabled(hasLabelForSelected);
                holder.chart.setPieChartData(holder.data);
                holder.chart.setOnValueTouchListener(new ValueTouchListener());
+               hasLabelForSelected = false;
+               holder.chart.setValueSelectionEnabled(hasLabelForSelected);
            }
        }
 
