@@ -138,21 +138,21 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\017\AndroidStudioProjects\Money_Saver_new_project\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.2.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.0"
-        sha1="593fbaec1c3e100480a2bd72457b64b7dde6ac2d">
-        <dex dex="C:\Users\017\AndroidStudioProjects\Money_Saver_new_project\app\build\intermediates\transforms\dex\free\debug\folders\1000\10\com.google.android.gms-play-services-tasks-9.2.0_edd166a14c74376deec1149f1721de391706832e\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\017\AndroidStudioProjects\Money_Saver_new_project\app\build\intermediates\exploded-aar\com.google.firebase\firebase-database-connection\9.2.0\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="24.0.0"
         sha1="33203b081101ca6242a4cd746aafe5fc2dd98a34">
         <dex dex="C:\Users\017\AndroidStudioProjects\Money_Saver_new_project\app\build\intermediates\transforms\dex\free\debug\folders\1000\10\com.google.firebase-firebase-database-connection-9.2.0_cf2dfea28e4e4586bbb6b7b5d4dab9120157686b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\017\AndroidStudioProjects\Money_Saver_new_project\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="593fbaec1c3e100480a2bd72457b64b7dde6ac2d">
+        <dex dex="C:\Users\017\AndroidStudioProjects\Money_Saver_new_project\app\build\intermediates\transforms\dex\free\debug\folders\1000\10\com.google.android.gms-play-services-tasks-9.2.0_edd166a14c74376deec1149f1721de391706832e\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -372,15 +372,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\017\AndroidStudioProjects\Money_Saver_new_project\app\build\intermediates\exploded-aar\com.google.firebase\firebase-common\9.2.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.0"
-        sha1="363f626ad5686283250cdb6073ae1bba5cb07a87">
-        <dex dex="C:\Users\017\AndroidStudioProjects\Money_Saver_new_project\app\build\intermediates\transforms\dex\free\debug\folders\1000\10\com.google.firebase-firebase-common-9.2.0_6c19a955a05b8b8dda1cb09fd497608cfa6b39fa\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\017\AndroidStudioProjects\Money_Saver_new_project\app\build\intermediates\exploded-aar\com.google.firebase\firebase-crash\9.2.0\jars\classes.jar"
         jumboMode="false"
         optimize="true"
@@ -396,6 +387,15 @@
         revision="24.0.0"
         sha1="404f4108b41050173f93836f5b35efdd9525a0ad">
         <dex dex="C:\Users\017\AndroidStudioProjects\Money_Saver_new_project\app\build\intermediates\transforms\dex\free\debug\folders\1000\10\com.google.android.gms-play-services-nearby-9.2.0_753979798b91cd5697f3ae35d45d0d2900894f30\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\017\AndroidStudioProjects\Money_Saver_new_project\app\build\intermediates\exploded-aar\com.google.firebase\firebase-common\9.2.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.0"
+        sha1="363f626ad5686283250cdb6073ae1bba5cb07a87">
+        <dex dex="C:\Users\017\AndroidStudioProjects\Money_Saver_new_project\app\build\intermediates\transforms\dex\free\debug\folders\1000\10\com.google.firebase-firebase-common-9.2.0_6c19a955a05b8b8dda1cb09fd497608cfa6b39fa\classes.dex" />
     </item>
     <item
         is-multidex="true"

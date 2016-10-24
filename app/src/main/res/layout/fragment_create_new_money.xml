@@ -69,7 +69,13 @@
         android:id="@+id/btn_new_insert"
         android:layout_gravity="center_horizontal" />
 
+    <include
+        layout="@layout/adview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
 
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true" />
 
 
 </LinearLayout>

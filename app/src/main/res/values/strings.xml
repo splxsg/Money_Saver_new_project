@@ -39,4 +39,5 @@
 
     <string name="fetch_complete">FetchWeatherTask Complete, inserted: </string>
     <string name="overview_updated">Overview has been updated</string>
+    <string name="invalid_type">Please enter amount</string>
 </resources>

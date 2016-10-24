@@ -22,6 +22,7 @@ public class AdviewActivity {
                     .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                     .build();
             mAdView.loadAd(adRequest);
+        mAdView.setVisibility(View.VISIBLE);
     }
 
 }

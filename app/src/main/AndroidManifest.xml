@@ -5,16 +5,23 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
-        android:name=".AnalyticsApplication"
+        android:name=".Rest.AnalyticsApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:theme="@android:style/Theme.Translucent" />
 
 
         <activity
-            android:name=".MainActivity"
+            android:name=".UI_activity.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -23,13 +30,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CreateNewMoneyActivity"
+        <activity android:name=".UI_activity.CreateNewMoneyActivity"
             android:label="New transaction"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".UI_activity.MainActivity"
             android:theme="@style/AppTheme">
 
         </activity>
-        <service android:name=".OverviewUpdateIntent" />
+        <service android:name=".Rest.OverviewUpdateIntent" />
         <service
             android:name=".widget.MoneyWidgetViewService"
             android:enabled="true"

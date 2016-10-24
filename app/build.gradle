@@ -46,7 +46,7 @@ dependencies {
     compile 'com.android.support:design:24.2.0'
     compile 'com.google.android.gms:play-services-analytics:9.2.0'
     compile 'com.github.lecho:hellocharts-library:1.5.8@aar'
-    freeCompile 'com.google.android.gms:play-services:9.2.0'
+    compile 'com.google.android.gms:play-services:9.2.0'
 }
 
 apply plugin: 'com.google.gms.google-services'

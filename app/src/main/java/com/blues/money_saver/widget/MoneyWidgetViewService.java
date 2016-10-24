@@ -3,7 +3,6 @@ package com.blues.money_saver.widget;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
-import android.database.DataSetObserver;
 import android.net.Uri;
 import android.os.Binder;
 import android.widget.AdapterView;
@@ -11,7 +10,7 @@ import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
 
 import com.blues.money_saver.R;
-import com.blues.money_saver.Utility;
+import com.blues.money_saver.Rest.Utility;
 import com.blues.money_saver.data.MoneyContract;
 
 /**
