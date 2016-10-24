@@ -105,12 +105,24 @@ public class OverviewRecycleAdapter extends RecyclerView.Adapter<OverviewRecycle
                holder.chart.setVisibility(View.VISIBLE);
                List<SliceValue> values = new ArrayList<SliceValue>();
                //for (int i = 0; i < numValues; ++i) {
-               SliceValue sliceValue = new SliceValue(daily, mContext.getColor(R.color.pie_daily));
+               SliceValue sliceValue = new SliceValue(1, mContext.getColor(R.color.pie_daily));
+               sliceValue.setTarget(daily);
                values.add(sliceValue);
-               sliceValue = new SliceValue(utility, mContext.getColor(R.color.pie_utility));
+               sliceValue = new SliceValue(1, mContext.getColor(R.color.pie_utility));
+               sliceValue.setTarget(utility);
                values.add(sliceValue);
-               sliceValue = new SliceValue(insurance, mContext.getColor(R.color.pie_insurance));
+               sliceValue = new SliceValue(2, mContext.getColor(R.color.pie_insurance));
+               sliceValue.setTarget(insurance);
                values.add(sliceValue);
+               holder.data = new PieChartData(values);
+
+
+//               sliceValue = new SliceValue(daily, mContext.getColor(R.color.pie_daily));
+//               values.add(sliceValue);
+//               sliceValue = new SliceValue(utility, mContext.getColor(R.color.pie_utility));
+//               values.add(sliceValue);
+//               sliceValue = new SliceValue(insurance, mContext.getColor(R.color.pie_insurance));
+//               values.add(sliceValue);
                // }
 
                holder.data = new PieChartData(values);
@@ -119,12 +131,13 @@ public class OverviewRecycleAdapter extends RecyclerView.Adapter<OverviewRecycle
                holder.data.setHasLabelsOutside(hasLabelsOutside);
                holder.data.setHasCenterCircle(hasCenterCircle);
 
-               holder.chart.setCircleFillRatio(0.7f);
+               holder.chart.setCircleFillRatio(1.0f);
                holder.chart.setValueSelectionEnabled(hasLabelForSelected);
                holder.chart.setPieChartData(holder.data);
                holder.chart.setOnValueTouchListener(new ValueTouchListener());
                hasLabelForSelected = false;
                holder.chart.setValueSelectionEnabled(hasLabelForSelected);
+               holder.chart.startDataAnimation();
            }
        }
 
