@@ -103,26 +103,38 @@ public class OverviewRecycleAdapter extends RecyclerView.Adapter<OverviewRecycle
            if(daily!=0 || utility !=0 || insurance != 0) {
                holder.pieEmptyTextview.setVisibility(View.INVISIBLE);
                holder.chart.setVisibility(View.VISIBLE);
+               holder.chart.setCircleFillRatio(1.0f);
                List<SliceValue> values = new ArrayList<SliceValue>();
                //for (int i = 0; i < numValues; ++i) {
-               SliceValue sliceValue = new SliceValue(1, mContext.getColor(R.color.pie_daily));
+//               SliceValue sliceValue = new SliceValue(1, mContext.getColor(R.color.pie_daily));
+//               sliceValue.setTarget(daily);
+//               values.add(sliceValue);
+//               sliceValue = new SliceValue(1, mContext.getColor(R.color.pie_utility));
+//               sliceValue.setTarget(utility);
+//               values.add(sliceValue);
+//               sliceValue = new SliceValue(2, mContext.getColor(R.color.pie_insurance));
+//               sliceValue.setTarget(insurance);
+//               values.add(sliceValue);
+
+
+
+
+               SliceValue sliceValue;
+               if(daily != 0) {
+                   sliceValue = new SliceValue(1, mContext.getColor(R.color.pie_daily));
                sliceValue.setTarget(daily);
                values.add(sliceValue);
-               sliceValue = new SliceValue(1, mContext.getColor(R.color.pie_utility));
+               }
+               if(utility != 0) {
+                   sliceValue = new SliceValue(1, mContext.getColor(R.color.pie_utility));
                sliceValue.setTarget(utility);
                values.add(sliceValue);
-               sliceValue = new SliceValue(2, mContext.getColor(R.color.pie_insurance));
+               }
+               if(insurance != 0) {
+                   sliceValue = new SliceValue(1, mContext.getColor(R.color.pie_insurance));
                sliceValue.setTarget(insurance);
-               values.add(sliceValue);
-               holder.data = new PieChartData(values);
-
-
-//               sliceValue = new SliceValue(daily, mContext.getColor(R.color.pie_daily));
-//               values.add(sliceValue);
-//               sliceValue = new SliceValue(utility, mContext.getColor(R.color.pie_utility));
-//               values.add(sliceValue);
-//               sliceValue = new SliceValue(insurance, mContext.getColor(R.color.pie_insurance));
-//               values.add(sliceValue);
+              values.add(sliceValue);
+               }
                // }
 
                holder.data = new PieChartData(values);
@@ -130,13 +142,12 @@ public class OverviewRecycleAdapter extends RecyclerView.Adapter<OverviewRecycle
                holder.data.setHasLabelsOnlyForSelected(hasLabelForSelected);
                holder.data.setHasLabelsOutside(hasLabelsOutside);
                holder.data.setHasCenterCircle(hasCenterCircle);
-
-               holder.chart.setCircleFillRatio(1.0f);
-               holder.chart.setValueSelectionEnabled(hasLabelForSelected);
                holder.chart.setPieChartData(holder.data);
+
+
+
                holder.chart.setOnValueTouchListener(new ValueTouchListener());
-               hasLabelForSelected = false;
-               holder.chart.setValueSelectionEnabled(hasLabelForSelected);
+
                holder.chart.startDataAnimation();
            }
        }
@@ -205,6 +216,9 @@ public class OverviewRecycleAdapter extends RecyclerView.Adapter<OverviewRecycle
             mMonthTextview = (TextView) view.findViewById(R.id.item_date);
             pieEmptyTextview = (TextView) view.findViewById(R.id.pie_empty);
             chart = (PieChartView) view.findViewById(R.id.chart);
+
+
+
         }
     }
 

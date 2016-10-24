@@ -19,7 +19,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/pie_empty"
-        android:paddingTop="@dimen/nav_header_vertical_spacing"
         android:text="@string/Empty_data">
         </TextView>
 
