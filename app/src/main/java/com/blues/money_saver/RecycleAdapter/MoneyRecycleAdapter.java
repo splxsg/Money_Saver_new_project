@@ -43,15 +43,17 @@ public class MoneyRecycleAdapter extends RecyclerView.Adapter<MoneyRecycleAdapte
            /*String datelongformat = mCursor.getString(mCursor.getColumnIndex(MoneyContract.MoneyEntry.COLUMN_MONEY_DATE_Year))+"-"+
                    mCursor.getString(mCursor.getColumnIndex(MoneyContract.MoneyEntry.COLUMN_MONEY_DATE_Month))+"-"+
                    mCursor.getString(mCursor.getColumnIndex(MoneyContract.MoneyEntry.COLUMN_MONEY_DATE_Date));*/
-            String datelongformat = Utility.getTabindex()+1+"/"+mCursor.getString(mCursor.getColumnIndex(MoneyContract.MoneyEntry.COLUMN_MONEY_DATE_Date));
+            String datelongformat = Utility.monthtoint(mCursor.getString(mCursor.getColumnIndex(MoneyContract.MoneyEntry.COLUMN_MONEY_DATE_Month)))
+                    +"/"+mCursor.getString(mCursor.getColumnIndex(MoneyContract.MoneyEntry.COLUMN_MONEY_DATE_Date));
             holder.mDateTextview.setText(datelongformat);
-            holder.mAmountTextview.setText(mCursor.getString(mCursor.getColumnIndex(MoneyContract.MoneyEntry.COLUMN_MONEY_AMOUNT)));
-            holder.mCategoryTextview.setText(mCursor.getString(mCursor.getColumnIndex(MoneyContract.MoneyEntry.COLUMN_MONEY_CATEGORY)));
+            String current_symbol = mContext.getString(R.string.symbol_current);
+            holder.mAmountTextview.setText(current_symbol+" "+mCursor.getString(mCursor.getColumnIndex(MoneyContract.MoneyEntry.COLUMN_MONEY_AMOUNT)));
+           // holder.mCategoryTextview.setText(mCursor.getString(mCursor.getColumnIndex(MoneyContract.MoneyEntry.COLUMN_MONEY_CATEGORY)));
             holder.mDetailsTextview.setText(mCursor.getString(mCursor.getColumnIndex(MoneyContract.MoneyEntry.COLUMN_MONEY_DETAILS)));
             holder.mDateTextview.setContentDescription(mContext.getString(R.string.a11y_DateTextview,
                     datelongformat));
-            holder.mCategoryTextview.setContentDescription(mContext.getString(R.string.a11y_CategoryTextview,
-                    mCursor.getString(mCursor.getColumnIndex(MoneyContract.MoneyEntry.COLUMN_MONEY_CATEGORY))));
+           // holder.mCategoryTextview.setContentDescription(mContext.getString(R.string.a11y_CategoryTextview,
+                //    mCursor.getString(mCursor.getColumnIndex(MoneyContract.MoneyEntry.COLUMN_MONEY_CATEGORY))));
             holder.mAmountTextview.setContentDescription(mContext.getString(R.string.a11y_AmountTextview,
                     mCursor.getString(mCursor.getColumnIndex(MoneyContract.MoneyEntry.COLUMN_MONEY_AMOUNT))));
             holder.mDetailsTextview.setContentDescription(mContext.getString(R.string.a11y_DetailsTextview,
@@ -74,14 +76,14 @@ public class MoneyRecycleAdapter extends RecyclerView.Adapter<MoneyRecycleAdapte
             TextView mDateTextview;
             TextView mDetailsTextview;
             TextView mAmountTextview;
-            TextView mCategoryTextview;
+            //TextView mCategoryTextview;
 
             MoneyRecycleViewHolder(View view) {
                 super(view);
                 mDateTextview = (TextView) view.findViewById(R.id.list_item_date);
                 mDetailsTextview = (TextView) view.findViewById(R.id.list_item_details);
                 mAmountTextview = (TextView) view.findViewById(R.id.list_item_amount);
-                mCategoryTextview = (TextView) view.findViewById(R.id.list_item_category);
+               // mCategoryTextview = (TextView) view.findViewById(R.id.list_item_category);
 
 
 

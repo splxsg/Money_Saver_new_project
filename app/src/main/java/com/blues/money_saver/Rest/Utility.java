@@ -29,6 +29,16 @@ public class Utility {
 
     public static int getTabindex(){return tabind;}
 
-
+    public static int monthtoint(String m)
+    {
+        int i = 1;
+        for(String s : Monthontab)
+        {
+            if(m.matches(s))
+                return i;
+            i++;
+        }
+        return -1;
+    }
 
 }
